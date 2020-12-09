@@ -26,7 +26,7 @@
   flex-direction: row;
   align-items: center;
   padding: 0;
-  justify-content: space-between;
+  justify-content: space-around;
   list-style: none;
 }
 .header li {
