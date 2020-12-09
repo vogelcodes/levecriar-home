@@ -49,12 +49,17 @@
 .title {
   margin: 0;
   line-height: 1.15;
-  font-size: 4rem;
+  font-weight: lighter;
+  color: #666349;
+  font-size: 56px;
+  font-family: Roboto Slab;
 }
 
 .title,
 .description {
   text-align: center;
+  color: #666349;
+
   max-width: 60%;
 }
 
@@ -83,8 +88,10 @@
 
 .card {
   margin: 1rem;
+  background-color: #eaeaead5;
   flex-basis: 25%;
-  padding: 1.5rem;
+  padding: 0;
+  min-width: 300px;
   text-align: left;
   color: inherit;
   text-decoration: none;
@@ -92,9 +99,7 @@
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
 }
-.img {
-  max-height: 200px;
-}
+
 
 .card:hover,
 .card:focus,
@@ -102,16 +107,32 @@
   color: #0070f3;
   border-color: #0070f3;
 }
-
+.textbox{
+  position: relative;
+  z-index: 2;
+  background-color: #eaeaead5;
+}
 .card h3 {
-  margin: 0 0 1rem 0;
+  margin: -1rem 0 1rem 1rem;
   font-size: 1.5rem;
+  color: #666349;
 }
 
 .card p {
-  margin: 0;
-  font-size: 1.25rem;
+  margin: 1rem;
+  font-size: 1rem;
   line-height: 1.5;
+  color: #666349;
+  ;
+}
+.card img {
+  position: relative;
+  z-index: 0;
+  max-width: 100%;
+
+  max-height: 20%;
+  
+  border-radius: inherit;
 }
 
 .logo {

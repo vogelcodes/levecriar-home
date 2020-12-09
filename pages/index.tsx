@@ -24,7 +24,7 @@ export default function Home({posts}) {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          LeveCriar
+          Leve Criar
         </h1>
 
         <p className={styles.description}>
@@ -35,11 +35,14 @@ export default function Home({posts}) {
           {posts.map(post=>{
             return(
               <a key={post.id}href={post.link} className={styles.card}>
-            <h3>{post.title.rendered.replace('&#8211;','-')}</h3>
             <img className={styles.img} src={post.jetpack_featured_media_url}/>
-            <p>
-            {post.excerpt.rendered.replace('&#8220;','"').replace('&#8230;','...').replace('&#8221;','"').replace('&#8211;','-').slice(3,-16)+'...'}
-            </p>
+                <div className={styles.textbox}>
+                  <h3>{post.title.rendered.replace('&#8211;','-')}</h3>
+                  <p>
+                  {post.excerpt.rendered.replace('&#8220;','"').replace('&#8230;','...').replace('&#8221;','"').replace('&#8211;','-').slice(3,-16)+'...'}
+                  </p>
+
+                </div>
           </a>
             )
           })}
@@ -48,15 +51,7 @@ export default function Home({posts}) {
       </main>
 
       <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
+Levecriar.com.br      </footer>
     </div>
   )
 }
