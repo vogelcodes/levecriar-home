@@ -24,7 +24,7 @@ export default function Home({posts}) {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Leve Criar
+          LeveCriar.com.br
         </h1>
 
         <p className={styles.description}>
