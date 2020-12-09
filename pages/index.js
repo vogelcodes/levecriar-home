@@ -4,8 +4,8 @@ import styles from '../styles/Home.module.css'
 
 
 
-export default function Home() {
-  const [posts, setPosts] = useState([]);
+export default function Home({posts}) {
+  /*const [posts, setPosts] = useState([]);
   useEffect(()=>{
     fetch("https://levecriar.com.br/wp-json/wp/v2/posts")
       .then(response=>{
@@ -14,7 +14,7 @@ export default function Home() {
         })
       });
 
-  },[]);
+  },[]);*/
   return (
     <div className={styles.container}>
       <Head>
@@ -59,4 +59,12 @@ export default function Home() {
       </footer>
     </div>
   )
+}
+export async function getStaticProps() {
+  const res = await fetch("https://levecriar.com.br/wp-json/wp/v2/posts")
+  const posts = await res.json()
+
+  return {
+    props: {posts}, // will be passed to the page component as props
+  }
 }
