@@ -19,15 +19,15 @@ export default function Home({posts, categories}) {
     <div className={styles.container}>
       <Head>
         <title>LeveCriar.com.br</title>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.png" />
         <link href="https://fonts.googleapis.com/css2?family=Glass+Antiqua&amp;family=Roboto+Slab:wght@300&amp;display=swap" rel="stylesheet"></link>
       </Head>
 
       <main className={styles.main}>
   <header className={styles.header}><ul>{categories.map(cat=>{
-    return <a href={cat.link}>
-              <li>{cat.name}</li>
-           </a>
+    return <li><a href={cat.link}>
+              {cat.name}
+           </a></li>
   })}</ul></header>
         <h1 className={styles.title}>
           Leve<br/>Criar
