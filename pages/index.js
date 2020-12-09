@@ -35,10 +35,10 @@ export default function Home({posts}) {
           {posts.map(post=>{
             return(
               <a key={post.id}href={post.link} className={styles.card}>
-            <h3>{post.title.rendered}</h3>
+            <h3>{post.title.rendered.replace('&#8211;','-')}</h3>
             <img className={styles.img} src={post.jetpack_featured_media_url}/>
             <p>
-            {post.excerpt.rendered}
+            {post.excerpt.rendered.replace('&#8220;','"').replace('&#8230;','...').replace('&#8221;','"').replace('&#8211;','-').slice(3,-16)+'...'}
             </p>
           </a>
             )
