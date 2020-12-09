@@ -20,11 +20,12 @@ export default function Home({posts}) {
       <Head>
         <title>LeveCriar.com.br</title>
         <link rel="icon" href="/favicon.ico" />
+        <link href="https://fonts.googleapis.com/css2?family=Glass+Antiqua&amp;family=Roboto+Slab:wght@300&amp;display=swap" rel="stylesheet"></link>
       </Head>
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          LeveCriar.com.br
+          Leve<br/>Criar
         </h1>
 
         <p className={styles.description}>
