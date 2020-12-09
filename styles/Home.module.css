@@ -89,6 +89,7 @@
 .card {
   margin: 1rem;
   background-color: #eaeaead5;
+  max-height: 500px;
   flex-basis: 25%;
   padding: 0;
   min-width: 300px;
@@ -109,6 +110,8 @@
 }
 .textbox{
   position: relative;
+  object-fit: cover;
+  max-height: 300px;
   z-index: 2;
   background-color: #eaeaead5;
 }
@@ -116,6 +119,7 @@
   margin: -2.3rem 0 1rem 1rem;
   font-size: 1.5rem;
   color: #666349;
+
 }
 
 .card p {

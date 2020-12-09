@@ -40,7 +40,7 @@ export default function Home({posts}) {
                 <div className={styles.textbox}>
                   <h3>{post.title.rendered.replace('&#8211;','-')}</h3>
                   <p>
-                  {post.excerpt.rendered.replace('&#8220;','"').replace('&#8230;','...').replace('&#8221;','"').replace('&#8211;','-').slice(3,-16)+'...'}
+                  {post.excerpt.rendered.replace('&#8220;','"').replace('&#8230;','...').replace('&#8221;','"').replace('&#8211;','-').slice(3,150)+'...'}
                   </p>
 
                 </div>
@@ -57,7 +57,7 @@ Levecriar.com.br      </footer>
   )
 }
 export async function getStaticProps() {
-  const res = await fetch("https://levecriar.com.br/wp-json/wp/v2/posts")
+  const res = await fetch("https://levecriar.com.br/wp-json/wp/v2/posts?per_page=12")
   const posts = await res.json()
 
   return {
