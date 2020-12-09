@@ -4,7 +4,7 @@ import styles from '../styles/Home.module.css'
 
 
 
-export default function Home({posts}) {
+export default function Home({posts, categories}) {
   /*const [posts, setPosts] = useState([]);
   useEffect(()=>{
     fetch("https://levecriar.com.br/wp-json/wp/v2/posts")
@@ -24,6 +24,11 @@ export default function Home({posts}) {
       </Head>
 
       <main className={styles.main}>
+  <header className={styles.header}><ul>{categories.map(cat=>{
+    return <a href={cat.link}>
+              <li>{cat.name}</li>
+           </a>
+  })}</ul></header>
         <h1 className={styles.title}>
           Leve<br/>Criar
         </h1>
@@ -57,10 +62,13 @@ Levecriar.com.br      </footer>
   )
 }
 export async function getStaticProps() {
-  const res = await fetch("https://levecriar.com.br/wp-json/wp/v2/posts?per_page=12")
+  var res = await fetch("https://levecriar.com.br/wp-json/wp/v2/posts?per_page=12")
   const posts = await res.json()
+  res = await fetch("https://www.levecriar.com.br/wp-json/wp/v2/categories?orderby=count&order=desc&per_page=6")
+  const categories = await res.json()
+  
 
   return {
-    props: {posts}, // will be passed to the page component as props
+    props: {posts, categories}, // will be passed to the page component as props
   }
 }
