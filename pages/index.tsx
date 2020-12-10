@@ -1,6 +1,7 @@
 import Head from 'next/head'
+import { Nav, Card, Button } from 'react-bootstrap';
 import { useEffect, useState } from 'react'
-import Card from '../components/card'
+//import Card from '../components/card'
 
 
 
@@ -24,16 +25,16 @@ export default function Home({posts, categories}) {
       </Head>
 
       <main className="flex flex-col items-center">
-  <header><ul className="w-screen flex flex-row">{categories.map(cat=>{
+  <Nav variant="pills" defaultActiveKey={categories[0].link}>{categories.map(cat=>{
     return (
-    <a className="flex-grow"href={cat.link}><li key={cat.id} className="text-4x1">{cat.name}</li></a>
-  )})}</ul></header>
-        <div className="w-auto flex flex-row items-center md:flex-col ml-8">
+    <Nav.Link key={cat.id} href={cat.link}>{cat.name}</Nav.Link>
+  )})}</Nav>
+        <div className="md:w-1/2 flex flex-row items-center md:flex-col ml-8">
           <h1 className="p-2 font-serif text-6xl md:text-8xl">
             Leve<br/>Criar
           </h1>
 
-          <p className="font-sans p-2 md:text-4xl md:text-center w-3/4">
+          <p className="text-3xl md:text-4xl">
           Um novo olhar para a criação de filhos com foco na criação com apego e no desenvolvimento de inteligência emocional e financeira.
           </p>
         </div>
@@ -41,7 +42,18 @@ export default function Home({posts, categories}) {
         <div className="flex justify-around flex-wrap m-8">
           {posts.map(post=>{
             return(
-              <Card props={post}/>
+              <Card key={post.id}style={{ width: '18rem' }}>
+  <Card.Img variant="top" src={post.jetpack_featured_media_url} />
+  <Card.Body>
+    <Card.Title>{post.title.rendered.replace('&#8211;','-')}</Card.Title>
+    <Card.Text>
+    {post.excerpt.rendered.replace('&#8220;','"').replace('&#8230;','...').replace('&#8221;','"').replace('&#8211;','-').slice(3,200)+'...'}
+
+    </Card.Text>
+    <Button variant="primary">Go somewhere</Button>
+  </Card.Body>
+</Card>
+              //<Card key={post.id} props={post}/>
             )
           })}
         
