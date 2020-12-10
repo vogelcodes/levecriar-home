@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { useEffect, useState } from 'react'
-import styles from '../styles/Home.module.css'
+import Card from '../components/card'
 
 
 
@@ -16,50 +16,40 @@ export default function Home({posts, categories}) {
 
   },[]);*/
   return (
-    <div className={styles.container}>
+    <div className="">
       <Head>
         <title>LeveCriar.com.br</title>
         <link rel="icon" href="/favicon.png" />
         <link href="https://fonts.googleapis.com/css2?family=Glass+Antiqua&amp;family=Roboto+Slab:wght@300&amp;display=swap" rel="stylesheet"></link>
       </Head>
 
-      <main className={styles.main}>
-  <header className={styles.header}><ul>{categories.map(cat=>{
-    return <li><a href={cat.link}>
-              {cat.name}
-           </a></li>
-  })}</ul></header>
-        <div className="w-auto flex flex-row items-center md:flex-col">
+      <main className="flex flex-col items-center">
+  <header><ul className="w-screen flex flex-row">{categories.map(cat=>{
+    return (
+    <a className="flex-grow"href={cat.link}><li key={cat.id} className="text-4x1">{cat.name}</li></a>
+  )})}</ul></header>
+        <div className="w-auto flex flex-row items-center md:flex-col ml-8">
           <h1 className="p-2 font-serif text-6xl md:text-8xl">
             Leve<br/>Criar
           </h1>
 
-          <p className="font-sans p-2 md:text-3xl md:text-center w-3/4">
+          <p className="font-sans p-2 md:text-4xl md:text-center w-3/4">
           Um novo olhar para a criação de filhos com foco na criação com apego e no desenvolvimento de inteligência emocional e financeira.
           </p>
         </div>
 
-        <div className={styles.grid}>
+        <div className="flex justify-around flex-wrap m-8">
           {posts.map(post=>{
             return(
-              <a key={post.id}href={post.link} className={styles.card}>
-            <img className={styles.img} src={post.jetpack_featured_media_url}/>
-                <div className={styles.textbox}>
-                  <h3>{post.title.rendered.replace('&#8211;','-')}</h3>
-                  <p>
-                  {post.excerpt.rendered.replace('&#8220;','"').replace('&#8230;','...').replace('&#8221;','"').replace('&#8211;','-').slice(3,150)+'...'}
-                  </p>
-
-                </div>
-          </a>
+              <Card props={post}/>
             )
           })}
         
         </div>
+      <footer className="self-center">
+Levecriar.com.br      </footer>
       </main>
 
-      <footer className={styles.footer}>
-Levecriar.com.br      </footer>
     </div>
   )
 }
