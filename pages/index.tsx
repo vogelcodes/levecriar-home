@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import { useEffect, useState } from 'react'
-import styles from '../styles/Home.module.css'
 
 
 
@@ -16,33 +15,33 @@ export default function Home({posts, categories}) {
 
   },[]);*/
   return (
-    <div className={styles.container}>
+    <div className="container">
       <Head>
         <title>LeveCriar.com.br</title>
         <link rel="icon" href="/favicon.png" />
         <link href="https://fonts.googleapis.com/css2?family=Glass+Antiqua&amp;family=Roboto+Slab:wght@300&amp;display=swap" rel="stylesheet"></link>
       </Head>
 
-      <main className={styles.main}>
-  <header className={styles.header}><ul>{categories.map(cat=>{
+      <main className="">
+  <header className="md:container mx-auto"><ul>{categories.map(cat=>{
     return <li><a href={cat.link}>
               {cat.name}
            </a></li>
   })}</ul></header>
-        <h1 className={styles.title}>
+        <h1 className="bg">
           Leve<br/>Criar
         </h1>
 
-        <p className={styles.description}>
+        <p className="">
         Um novo olhar para a criação de filhos com foco na criação com apego e no desenvolvimento de inteligência emocional e financeira.
         </p>
 
-        <div className={styles.grid}>
+        <div className="">
           {posts.map(post=>{
             return(
-              <a key={post.id}href={post.link} className={styles.card}>
-            <img className={styles.img} src={post.jetpack_featured_media_url}/>
-                <div className={styles.textbox}>
+              <a key={post.id}href={post.link} className="">
+            <img className="" src={post.jetpack_featured_media_url}/>
+                <div className="">
                   <h3>{post.title.rendered.replace('&#8211;','-')}</h3>
                   <p>
                   {post.excerpt.rendered.replace('&#8220;','"').replace('&#8230;','...').replace('&#8221;','"').replace('&#8211;','-').slice(3,150)+'...'}
@@ -56,7 +55,7 @@ export default function Home({posts, categories}) {
         </div>
       </main>
 
-      <footer className={styles.footer}>
+      <footer className="">
 Levecriar.com.br      </footer>
     </div>
   )
