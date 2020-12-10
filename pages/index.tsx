@@ -29,13 +29,15 @@ export default function Home({posts, categories}) {
               {cat.name}
            </a></li>
   })}</ul></header>
-        <h1 className={styles.title}>
-          Leve<br/>Criar
-        </h1>
+        <div className="w-auto flex flex-row items-center md:flex-col">
+          <h1 className="p-2 font-serif text-6xl md:text-8xl">
+            Leve<br/>Criar
+          </h1>
 
-        <p className={styles.description}>
-        Um novo olhar para a criação de filhos com foco na criação com apego e no desenvolvimento de inteligência emocional e financeira.
-        </p>
+          <p className="font-sans p-2 md:text-3xl md:text-center w-3/4">
+          Um novo olhar para a criação de filhos com foco na criação com apego e no desenvolvimento de inteligência emocional e financeira.
+          </p>
+        </div>
 
         <div className={styles.grid}>
           {posts.map(post=>{
