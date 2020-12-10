@@ -1,5 +1,5 @@
 module.exports = {
-  purge: ['./pages/**/*.js', './components/**/*.js'],
+  purge: [],//'./pages/**/*.js', './components/**/*.js'
   darkMode: false, // or 'media' or 'class'
   theme: {
     colors: {
@@ -7,6 +7,7 @@ module.exports = {
     },
     fontFamily: {
       serif: ['Roboto Slab'],
+      sans: ['Glass Antiqua']
     },
     extend: {},
   },
